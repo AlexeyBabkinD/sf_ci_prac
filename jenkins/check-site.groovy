@@ -9,4 +9,11 @@ pipeline {
             }
         }
     }
+    post {
+        failure {
+            mail to: 'a-babkin@bk.ru',
+            subject: "Pipeline failed: ${currentBuild.fullDisplayName}",
+            body: "Build failed ${env.BUILD_URL}"
+        }
+    }
 }
