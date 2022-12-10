@@ -8,7 +8,7 @@ docker run --name check-site -p 9889:80 my_nginx > /dev/null 2>&1 &
 sleep 5
 
 echo "Check curl status"
-resp_status=$(curl -I http://10.128.0.252:9889 >/dev/null | head -n 1 | cut -d$' ' -f2)
+resp_status=$(curl -I http://158.160.44.195:9889 >/dev/null | head -n 1 | cut -d$' ' -f2)
 echo "$resp_status"
 
 echo "Get md5sum index.html in container"
