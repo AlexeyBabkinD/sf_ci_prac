@@ -9,7 +9,7 @@ echo "Get md5sum index.html in container"
 index_docker=$(docker exec check-site md5sum /usr/share/nginx/html/index.html)
 index_docker=$(echo $index_docker | awk '{ print $1 }')
 echo "Get md5sum index.html in repo"
-index_repo=$(md5sum ../index.html | awk '{ print $1 }')
+index_repo=$(md5sum ./index.html | awk '{ print $1 }')
 echo $index_docker
 echo $index_repo
 echo "Remove docker"
